@@ -168,6 +168,10 @@ p {
   color: var(--color-white);
 }
 
+.home__contact:hover{
+  background-color: var(--color-orange);
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -310,6 +314,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected, 
@@ -331,9 +336,9 @@ p {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -459,8 +464,20 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root{
+  /* Font size */
+  --font-large: 30x;
+  --font-medium: 18x;
+  --font-regular: 16px;
+  --font-small: 14px;
+  --font-micro: 12px;
+  }
+
   .navbar__toggle-btn{
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -477,12 +494,19 @@ p {
     display: none;
   }
 
+  .section{
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .navbar__menu.open {
     display: block;
   }
 
   .about__majors{
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major{
@@ -493,7 +517,19 @@ p {
     flex-direction: column;
   }
 
+  .category__btn{
+    margin: 4px 0;
+  }
   .project{
     flex-grow: 1;
+  }
+
+  .arrow-up{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 30px;
+    right: 16px;
+    bottom: 16px;
   }
 }
